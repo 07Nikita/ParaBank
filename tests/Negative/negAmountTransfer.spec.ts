@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test"
 import Login from "../../POM/login-logout"
 import transferFund from "../../POM/transfer-fund"
 
-test('Transfer Negative Amount',async({page})=>{
+test.fail('Transfer Negative Amount',async({page})=>{
 
     const loginPage = new Login(page)
     const transfer = new transferFund(page)

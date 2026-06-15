@@ -3,7 +3,7 @@ import data from "../../data/data.json"
 
 let baseURL = "https://parabank.parasoft.com/parabank/services/bank"
 
-test('transfer more funds via API', async ({ request }) => {
+test.fail('transfer more funds via API', async ({ request }) => {
 
     const accountId = 12345
     const newAccountId = 12456

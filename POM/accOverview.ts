@@ -38,10 +38,9 @@ class accOverview {
 
     async getAccountBalance(accountId: string) {
 
-         await this.page.locator(`//tr[td/a[text()="${accountId}"]]/td[2]`).waitFor({state:'visible'})
+    await this.page.locator(`//tr[td/a[text()="${accountId}"]]/td[2]`).waitFor({state:'visible'})
 
     const balance = await this.page.locator(`//tr[td/a[text()="${accountId}"]]/td[2]`).textContent()
-
 
     return parseFloat(balance!.replace('$', '').replace(',', ''))
 }

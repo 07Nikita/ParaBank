@@ -1,0 +1,7 @@
+Customer ID: 12212
+Source Account: 12345
+New Account: 21114
+Source Balance Before: -9985727
+Destination Balance Before: 100
+Source Balance After: -9985737
+Destination Balance After: 110

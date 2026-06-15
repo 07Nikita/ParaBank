@@ -6,7 +6,7 @@ import testData from "../../data/data.json"
 
 let baseURL = "https://parabank.parasoft.com/parabank/services/bank"
 
-test('Transfer Funds and Validate Balance', async ({ page, request }) => {
+test('tranfer via ui validate via api', async ({ page, request }) => {
 
     const loginPage = new login(page)
     const transfer = new transferFund(page)
@@ -24,7 +24,7 @@ test('Transfer Funds and Validate Balance', async ({ page, request }) => {
     console.log("From Account:", fromAcc)
     console.log("To Account:", toAcc)
 
-    const fromBeforeRes = await request.get(`${baseURL}/accounts/${fromAcc}`,
+    const fromBefore = await request.get(`${baseURL}/accounts/${fromAcc}`,
         {
             headers: {
                 Accept: "application/json"
@@ -32,7 +32,7 @@ test('Transfer Funds and Validate Balance', async ({ page, request }) => {
         }
     )
 
-    const toBeforeRes = await request.get(`${baseURL}/accounts/${toAcc}`,
+    const toBefore = await request.get(`${baseURL}/accounts/${toAcc}`,
         {
             headers: {
                 Accept: "application/json"
@@ -40,11 +40,11 @@ test('Transfer Funds and Validate Balance', async ({ page, request }) => {
         }
     )
 
-    expect(fromBeforeRes.status()).toBe(200)
-    expect(toBeforeRes.status()).toBe(200)
+    expect(fromBefore.status()).toBe(200)
+    expect(toBefore.status()).toBe(200)
 
-    const fromBeforeBody = await fromBeforeRes.json()
-    const toBeforeBody = await toBeforeRes.json()
+    const fromBeforeBody = await fromBefore.json()
+    const toBeforeBody = await toBefore.json()
 
     const fromBalBefore = Number(fromBeforeBody.balance)
     const toBalBefore = Number(toBeforeBody.balance)
@@ -57,7 +57,7 @@ test('Transfer Funds and Validate Balance', async ({ page, request }) => {
 
     await expect(page.locator('#rightPanel h1').nth(1)).toHaveText('Transfer Complete!')
 
-    const fromAfterRes = await request.get(`${baseURL}/accounts/${fromAcc}`,
+    const fromAfter = await request.get(`${baseURL}/accounts/${fromAcc}`,
         {
             headers: {
                 Accept: "application/json"
@@ -65,7 +65,7 @@ test('Transfer Funds and Validate Balance', async ({ page, request }) => {
         }
     )
 
-    const toAfterRes = await request.get(`${baseURL}/accounts/${toAcc}`,
+    const toAfter = await request.get(`${baseURL}/accounts/${toAcc}`,
         {
             headers: {
                 Accept: "application/json"
@@ -73,11 +73,11 @@ test('Transfer Funds and Validate Balance', async ({ page, request }) => {
         }
     )
 
-    expect(fromAfterRes.status()).toBe(200)
-    expect(toAfterRes.status()).toBe(200)
+    expect(fromAfter.status()).toBe(200)
+    expect(toAfter.status()).toBe(200)
 
-    const fromAfterBody = await fromAfterRes.json()
-    const toAfterBody = await toAfterRes.json()
+    const fromAfterBody = await fromAfter.json()
+    const toAfterBody = await toAfter.json()
 
     const fromBalAfter = Number(fromAfterBody.balance)
     const toBalAfter = Number(toAfterBody.balance)

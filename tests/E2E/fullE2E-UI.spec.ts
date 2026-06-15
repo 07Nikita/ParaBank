@@ -7,7 +7,7 @@ import accOverview from "../../POM/accOverview"
 import transferFund from "../../POM/transfer-fund"
 import RequestLoan from "../../POM/request-loan"
 
-test('Full UI E2E Journey',async({page})=>{
+test('Full UI E2E ',async({page})=>{
 
     const registration = new Registration(page)
     const loginPage = new Login(page)
@@ -21,7 +21,7 @@ test('Full UI E2E Journey',async({page})=>{
 
     await registration.navigateToRegister()
 
-    await registration.registerUser2()
+    await registration.registerUser()
 
 
     await page.screenshot({path:`screenshots/E2E/ui/1-Registration.png`})

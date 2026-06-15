@@ -11,13 +11,11 @@ test("registration", async ({ page }) => {
 
     await expect(page).toHaveURL(/register.htm/)
     
-    await reg.registerUser2()
+    await reg.registerUser()
     
     await expect(page.locator('#rightPanel')).toContainText('Your account was created successfully. You are now logged in.')
 
     await page.screenshot({path:'screenshots/UI/registration.png'})
-
-    // await reg.collectAccId()
 
    
 })

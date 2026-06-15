@@ -1,6 +1,6 @@
 import {Locator,Page} from "@playwright/test"
 import testData from "../data/data.json"
-import fs from "fs"
+
 
 class Registration {
 
@@ -47,26 +47,7 @@ class Registration {
     }
 
     async registerUser() {
-        const username = `nikita${Math.floor(Math.random() * 10000)}`
-        await this.fname.fill(testData.firstName)
-        await this.lname.fill(testData.lastName)
-        await this.address.fill(testData.address)
-        await this.city.fill(testData.city)
-        await this.state.fill(testData.state)
-        await this.zip.fill(testData.zip)
-        await this.phone.fill(testData.phone)
-        await this.ssn.fill(testData.ssn)
-         await this.username.fill(username)
-        // await this.username.fill(testData.rusername)
-        await this.password.fill(testData.rpassword)
-        await this.confirmpassword.fill(testData.rpassword)
-        await this.submitBtn.click()
-        
-        
-    }
-
-    async registerUser2() {
-        const username = `nikita${Math.floor(Math.random() * 10000)}`
+        const username = `user${Date.now()}`
         await this.fname.fill(testData.firstName)
         await this.lname.fill(testData.lastName)
         await this.address.fill(testData.address)
@@ -82,17 +63,6 @@ class Registration {
         
         
     }
-
-    async collectAccId() {
-        await this.accOverviewBtn.click()
-        await this.accid.waitFor({ state: 'visible' })
-        const accountId = await this.accid.textContent()
-        const data = JSON.parse(fs.readFileSync('./data/data.json', 'utf-8'))
-        data.accountId = Number(accountId?.trim())
-        fs.writeFileSync('./data/data.json',JSON.stringify(data, null, 2))
-    console.log("Newly created account ID:", data.accountId)
-    return accountId
-}
 
     async invalidreg() {
 

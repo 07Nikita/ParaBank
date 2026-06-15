@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test"
 import login from "../../POM/login-logout"
 import openSavingAccount from "../../POM/open-saving-account"
 
-test('Open Savings Account and Verify Account Type via API', async ({ page, request }) => {
+test('open saving account and verify via api', async ({ page, request }) => {
 
     const loginPage = new login(page)
     const savingAccount = new openSavingAccount(page)

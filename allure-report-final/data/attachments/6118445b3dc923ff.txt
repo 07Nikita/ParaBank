@@ -1,0 +1,10 @@
+NEW checking Account Number: 14787
+Content-Type:
+[
+  { id: 13344, customerId: 12212, type: 'CHECKING', balance: 4682.93 },
+  { id: 13788, customerId: 12212, type: 'LOAN', balance: 120 },
+  { id: 13899, customerId: 12212, type: 'SAVINGS', balance: 100 },
+  { id: 14010, customerId: 12212, type: 'SAVINGS', balance: 110 },
+  { id: 14565, customerId: 12212, type: 'SAVINGS', balance: 100 }
+]
+Account 14787 found in API response

@@ -3,7 +3,7 @@ import data from "../../data/data.json"
 
 let baseURL = "https://parabank.parasoft.com/parabank/services/bank"
 
-test('API E2E - Login Create Account Transfer Funds Verify Balance', async ({ request }) => {
+test('API E2E', async ({ request }) => {
 
     let loginRes = await request.get(`${baseURL}/login/${data.username}/${data.password}`,
         {

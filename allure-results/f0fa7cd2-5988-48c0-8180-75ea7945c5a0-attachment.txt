@@ -1,0 +1,3 @@
+NEW savings Account Number: 22446
+New Account ID: 22446
+{ id: 22446, customerId: 12212, type: 'SAVINGS', balance: 100 }

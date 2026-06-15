@@ -6,7 +6,7 @@ import data from "../../data/data.json"
 let baseURL = "https://parabank.parasoft.com/parabank/services/bank"
 
 
-test("TC-E2E-01 Create Account via UI and Validate via API", async ({page,request}) => {
+test(" create account via ui and validate via api", async ({page,request}) => {
      //!UI
     const registration = new Registration(page)
     const openAccount = new OpenCheckinAccount(page)

@@ -1,0 +1,3 @@
+NEW savings Account Number: 15009
+New Account ID: 15009
+{ id: 15009, customerId: 12212, type: 'SAVINGS', balance: 100 }

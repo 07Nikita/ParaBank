@@ -4,7 +4,7 @@ import data from "../../data/data.json"
 
 let baseURL = "https://parabank.parasoft.com/parabank/services/bank"
 
-test("Create New Account", async ({ request }) => {
+test("create new account", async ({ request }) => {
 
     let res = await request.post(`${baseURL}/createAccount?customerId=${data.customerId}&newAccountType=1&fromAccountId=${data.accountId}`,
         {

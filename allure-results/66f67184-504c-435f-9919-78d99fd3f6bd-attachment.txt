@@ -1,0 +1,3 @@
+Customer ID: 12212
+New Account Created: 21003
+Account 21003 successfully displayed in UI

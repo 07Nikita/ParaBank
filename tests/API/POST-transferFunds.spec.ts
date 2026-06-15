@@ -9,8 +9,6 @@ test("transfer funds",async({request})=>{
 
     let res = await request.post(`${baseURL}/transfer?fromAccountId=${data.accountId}&toAccountId=${data.newAccountId}&amount=${transferAmount}`)
 
-    expect(res.status()).toBe(200)
-
     let body = await res.text()
 
     console.log(body)

@@ -1,0 +1,5 @@
+[
+  { id: 13344, customerId: 12212, type: 'CHECKING', balance: 4902.93 },
+  { id: 13788, customerId: 12212, type: 'LOAN', balance: 110 },
+  { id: 13899, customerId: 12212, type: 'SAVINGS', balance: 100 }
+]

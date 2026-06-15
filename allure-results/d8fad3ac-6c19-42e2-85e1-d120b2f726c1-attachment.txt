@@ -1,0 +1,2 @@
+Status Code: 200
+Successfully transferred $9982537 from account #12345 to account #12456

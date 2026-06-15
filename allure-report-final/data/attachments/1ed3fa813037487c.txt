@@ -1,0 +1,1 @@
+{ id: 16563, customerId: 12212, type: 'SAVINGS', balance: 0 }
